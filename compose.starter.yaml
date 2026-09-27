@@ -1,0 +1,13 @@
+# TODO: 아래 값을 완성하세요. README의 파일 역할·컨테이너 연결을 참고하세요.
+services:
+  api:
+    build: TODO_API_DIRECTORY
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "TODO_HOST_PORT:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/html:/usr/share/nginx/html:ro
+    depends_on:
+      - api
